@@ -4,7 +4,7 @@ import styles from '../styles/Song.module.css';
 const Song = ({ currentSong }) => {
   return (
     <div className={styles['song-container']}>
-      <img src={currentSong.cover} />
+      <img src={currentSong.cover} alt={currentSong.name} />
       <h2>{currentSong.name}</h2>
       <h3>{currentSong.artist}</h3>
     </div>
