@@ -6,6 +6,7 @@ img {
 .library-song {
     display: flex;
     align-items: center;
+    position: relative;
     cursor: pointer;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -32,4 +33,50 @@ img {
 .selected {
     background-color: rgb(222, 222, 255);
     border-radius: 8px;
+}
+
+
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+    width: 20%;
+    position: absolute;
+    right: 1.5rem;
+}
+
+.wave {
+	height: 50%;
+	width: 50%;
+    fill: rgb(100, 100, 100);
+}
+
+@for $i from 1 through 9 {
+	#Line_#{$i} {
+		animation: pulse 1s infinite;
+		animation-delay: $i * .15s;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scaleY(1);
+		transform-origin: 50% 50%;
+	}
+	
+	50% {
+		transform: scaleY(.7);
+		transform-origin: 50% 50%;
+	}
+	
+	100% {
+		transform: scaleY(1);
+		transform-origin: 50% 50%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+    .library-song {
+        margin-bottom: 1rem;
+    }
 }
