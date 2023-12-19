@@ -23,9 +23,30 @@
         height: 80%;
         padding: 1rem 0 1rem 1rem;
     }
+    .close-icon {
+        display: none;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        transform: scale(1.5);
+        cursor: pointer;
+        color: rgb(65,65,65);
+    }
 }
 
 .active-library {
     transform: translateX(0%);
     opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .library{
+        width: 100%;
+        .close-icon {
+            display: block;
+        }
+        .library-songs {
+            display: block;
+        }
+    }
 }
