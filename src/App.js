@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './styles/App.scss';
 //Components
 import Player from './components/Player';
@@ -33,6 +33,12 @@ function App() {
       animationPercentage: animation,
     });
   };
+
+  useEffect(() => {
+    document.title = isPlaying
+      ? `Currently Playing: ${currentSong.name}`
+      : 'Music Player';
+  }, [isPlaying, currentSong]);
 
   return (
     <div className={`App ${libraryStatus ? 'library-active' : ''}`}>
